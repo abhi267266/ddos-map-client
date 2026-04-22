@@ -10,8 +10,11 @@ vi.mock('./components/GlobeScene', () => ({
 test('renders the threat dashboard', () => {
   render(<Home />)
   
-  const heading = screen.getByText(/Total Attacks \(24h\)/i)
-  expect(heading).toBeDefined()
+  const totalDetected = screen.getByText(/Total Detected/i)
+  expect(totalDetected).toBeDefined()
+
+  const activeOnMap = screen.getByText(/Active on Map/i)
+  expect(activeOnMap).toBeDefined()
   
   const liveFeed = screen.getByText(/Live Threat Feed/i)
   expect(liveFeed).toBeDefined()
